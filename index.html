@@ -28,7 +28,7 @@
         </nav>
         
         <main id="Início" class="cabecalho">
-            <img src="./perfil.jpg" alt="Foto de Perfil" class="foto-perfil">
+            <img src="./img/perfil.jpg" alt="Foto de Perfil" class="foto-perfil">
             <h1>Miriam Lopes</h1>
             <p class="cabecalho-subtitulo">Desenvolvedora Front-End</p>
         </main>
@@ -37,24 +37,23 @@
             <h2 class="sobre-mim-titulo">Sobre Mim</h2>
             <div class="sobre-mim-caixa">
                 <p class="sobre-mim-paragrafo">Olá! Meu nome é Miriam Lopes, sou uma desenvolvedora front-end apaixonada por criar experiências digitais incríveis. Com habilidades em HTML, CSS e JavaScript, estou sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades para entregar projetos de alta qualidade. </p>
-            </div>
+            </div>            
         </section>
 
         <section id="projetos" class="projetos">
             <h2 class="projetos-titulo">Meus Projetos</h2>
             <div class="projetos-caixa">
 
-                <div class="projetos-card">
-                    <img src="./calculadora.jpeg" alt="Projeto 1" class="projetos-imagem">
+                <div class="projetos-card" onclick="abrirProjetos(`https://srtmiah.github.io/calculadora1.1/`)">
+                    <img src="./img/calculadora.jpeg" alt="Projeto 1" class="projetos-imagem">
                     <div class="caixa-texto-projetos">
                         <h3 class="projetos-nome">Calculadora Simples</h3>
                         <p class="projetos-descricao">Uma calculadora básica desenvolvida com HTML, CSS e JavaScript que realiza operações aritméticas simples.</p>
                     </div>
-                    
                 </div>
 
-                <div class="projetos-card">
-                    <img src="./quiz_de_logica.png" alt="Projeto 2" class="projetos-imagem">
+                <div class="projetos-card" onclick="abrirProjetos(`https://srtmiah.github.io/quiz-de-logica-2.0/`)">
+                    <img src="./img/quiz_de_logica.png" alt="Projeto 2" class="projetos-imagem">
                     <div class="caixa-texto-projetos">
                         <h3 class="projetos-nome">Quiz De Lógica</h3>
                         <p class="projetos-descricao">Um quiz interativo que testa suas habilidades de lógica com perguntas desafiadoras e respostas imediatas.</p>
@@ -62,7 +61,7 @@
                 </div>
 
                 <div class="projetos-card">
-                    <img src="./foto_perfil.jpg" alt="Projeto 3" class="projetos-imagem">
+                    <img src="./img/foto_perfil.jpg" alt="Projeto 3" class="projetos-imagem">
                     <div class="caixa-texto-projetos">
                         <h3 class="projetos-nome">Exemplo de projeto</h3>
                         <p class="projetos-descricao">Descrição do projeto exemplo, destacando suas funcionalidades e tecnologias utilizadas.</p>
@@ -86,6 +85,9 @@
         </section>
 
         <script>
+            function abrirProjetos(url) {
+                window.open(url, '_self');
+            }
             function enviarWhats(event) {
                 event.preventDefault();
 
@@ -96,10 +98,9 @@
                     const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
                     const msgFormatada = encodeURIComponent(texto);
 
-                    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+                    const url = `https://wa.me/${telefone}?text=${msgFormatada}`; 
                     window.open(url, '_blank');
             }
         </script>
     </body>
-
 </html>
