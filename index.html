@@ -102,5 +102,37 @@
                     window.open(url, '_blank');
             }
         </script>
+
+        <script>
+            const subtitulo = document.querySelector('.cabecalho-subtitulo');
+
+            let elementos = [];
+            let atual = subtitulo.parentElement.nextElementSibling;
+
+            while (atual) {
+                atual.classList.add('reveal');
+                elementos.push(atual);
+
+                atual.querySelectorAll('*').forEach(el => {
+                    el.classList.add('reveal');
+                    elementos.push(el);
+                });
+
+                atual = atual.nextElementSibling;
+            }
+
+            const observer = new IntersectionObserver((entradas) => {
+                entradas.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                }
+                });
+            }, { threshold: 0.2 });
+
+            elementos.forEach(el => observer.observe(el));
+        </script>
+
     </body>
 </html>
